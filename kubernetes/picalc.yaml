@@ -38,6 +38,7 @@ spec:
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
+  name: picalc
   labels:
     app: picalc
     app.kubernetes.io/instance: tekton-picalc
