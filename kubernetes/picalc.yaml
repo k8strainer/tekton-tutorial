@@ -33,7 +33,7 @@ spec:
     targetPort: http-server
   selector:
     app: picalc
-  type: ClusterIP
+  type: NodePort
 ---
 apiVersion: route.openshift.io/v1
 kind: Route
