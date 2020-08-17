@@ -34,7 +34,7 @@ spec:
   selector:
     app: picalc
   type: ClusterIP
-  ---
+---
 apiVersion: route.openshift.io/v1
 kind: Route
 metadata:
@@ -52,6 +52,3 @@ spec:
     name: picalc
     weight: 100
   wildcardPolicy: None
-
-  
-  
