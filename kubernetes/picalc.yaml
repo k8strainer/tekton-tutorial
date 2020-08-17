@@ -33,4 +33,25 @@ spec:
     targetPort: http-server
   selector:
     app: picalc
-  type: NodePort
+  type: ClusterIP
+  ---
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  labels:
+    app: picalc
+    app.kubernetes.io/instance: tekton-picalc
+  name: picalc
+  namespace: tekton-pipelines
+spec:
+  host: picalc-tekton-pipelines.apps.opns1.local1.site
+  port:
+    targetPort: http-server
+  to:
+    kind: Service
+    name: picalc
+    weight: 100
+  wildcardPolicy: None
+
+  
+  
