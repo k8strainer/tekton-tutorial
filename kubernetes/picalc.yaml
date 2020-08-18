@@ -5,7 +5,7 @@ metadata:
   labels:
     app: picalc
 spec:
-  replicas: 1
+  replicas: 2
   selector:
     matchLabels:
       app: picalc
@@ -28,27 +28,29 @@ metadata:
   labels:
     app: picalc
 spec:
+  externalIPs:
+  - 192.168.99.77
   ports:
   - port: 8080
     targetPort: http-server
   selector:
     app: picalc
-  type: ClusterIP
+  type: NodePort
 ---
-#apiVersion: route.openshift.io/v1
-#kind: Route
-#metadata:
-#  name: picalc
-#  labels:
-#    app: picalc
-#    app.kubernetes.io/instance: picalc
-#spec:
-#  host: picalc-tekton-pipelines.apps.opns1.local1.site
-#  port:
-#    targetPort: http-server
-#  to:
-#    kind: Service
-#    name: picalc
-#    weight: 100
-#  wildcardPolicy: None
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: picalc
+  labels:
+    app: picalc
+    app.kubernetes.io/instance: picalc
+spec:
+  host: picalc-tekton-pipelines.apps.opns1.local1.site
+  port:
+    targetPort: http-server
+  to:
+    kind: Service
+    name: picalc
+    weight: 100
+  wildcardPolicy: None
 
