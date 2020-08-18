@@ -13,6 +13,7 @@ spec:
     metadata:
       labels:
         app: picalc
+        bla: blubb
     spec:
       containers:
       - name: picalc
