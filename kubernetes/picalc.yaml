@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: picalc
-        image: docker.io/oliverliebel/picalc:1.0@sha256:eb3ad5de8d2d7536f444db7f18d446c87f116ce0a88df0a493307e9eb783f4ad
+        image: __IMAGE__@__DIGEST__
         ports:
         - name: http-server
           containerPort: 8080
