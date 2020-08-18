@@ -5,7 +5,7 @@ metadata:
   labels:
     app: picalc
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: picalc
@@ -41,7 +41,7 @@ metadata:
   name: picalc
   labels:
     app: picalc
-    app.kubernetes.io/instance: tekton-picalc
+    app.kubernetes.io/instance: picalc
 spec:
   host: picalc-tekton-pipelines.apps.opns1.local1.site
   port:
