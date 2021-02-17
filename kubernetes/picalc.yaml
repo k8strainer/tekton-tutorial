@@ -13,11 +13,11 @@ spec:
     metadata:
       labels:
         app: picalc
-        bla: blubb
+        bla: blubb123
     spec:
       containers:
       - name: picalc
-        image: gcr.io/cluster-01-290863/picalc:1.0@sha256:9fa9d713756a5de14798a2810ce4871863076c7cfeb650c59bc1518659b75ca2
+        image: gcr.io/cluster-01-290863/picalc:1.0
         ports:
         - name: http-server
           containerPort: 8080
