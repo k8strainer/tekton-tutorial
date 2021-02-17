@@ -14,7 +14,7 @@ spec:
       labels:
         app: picalc
         foo: bar
-        vers: "3"
+        vers: "4"
     spec:
       containers:
       - name: picalc
