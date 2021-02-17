@@ -17,7 +17,7 @@ spec:
     spec:
       containers:
       - name: picalc
-        image: docker.io/oliverliebel/picalc:1.0@sha256:e74688786ad62af8e091ceb82020163335b814e512291a457071fc02b97bd067
+        image: gcr.io/cluster-01-290863/picalc:1.0@sha256:9fa9d713756a5de14798a2810ce4871863076c7cfeb650c59bc1518659b75ca2
         ports:
         - name: http-server
           containerPort: 8080
@@ -29,29 +29,29 @@ metadata:
   labels:
     app: picalc
 spec:
-  externalIPs:
-  - 192.168.99.77
+#  externalIPs:
+#  - 192.168.99.77
   ports:
   - port: 8080
     targetPort: http-server
   selector:
     app: picalc
-  type: NodePort
+  type: LoadBalancer
 ---
-apiVersion: route.openshift.io/v1
-kind: Route
-metadata:
-  name: picalc
-  labels:
-    app: picalc
-    app.kubernetes.io/instance: picalc
-spec:
-  host: picalc-tekton-pipelines.apps.opns1.local1.site
-  port:
-    targetPort: http-server
-  to:
-    kind: Service
-    name: picalc
-    weight: 100
-  wildcardPolicy: None
+#apiVersion: route.openshift.io/v1
+#kind: Route
+#metadata:
+#  name: picalc
+#  labels:
+#    app: picalc
+#    app.kubernetes.io/instance: picalc
+#spec:
+#  host: picalc-tekton-pipelines.apps.opns1.local1.site
+#  port:
+#    targetPort: http-server
+#  to:
+#    kind: Service
+#    name: picalc
+#    weight: 100
+#  wildcardPolicy: None
 
