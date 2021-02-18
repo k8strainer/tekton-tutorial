@@ -13,8 +13,8 @@ spec:
     metadata:
       labels:
         app: picalc
-        foo: bar2
-        vers: "6"
+        foo: bar3
+        vers: "1"
     spec:
       containers:
       - name: picalc
