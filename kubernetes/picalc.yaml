@@ -29,6 +29,7 @@ metadata:
   name: picalc
   labels:
     app: picalc
+    foo: bar
 spec:
 #  externalIPs:
 #  - 192.168.99.77
