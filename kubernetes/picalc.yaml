@@ -5,7 +5,7 @@ metadata:
   labels:
     app: picalc
 spec:
-  replicas: 3
+  replicas: 5
   selector:
     matchLabels:
       app: picalc
@@ -13,8 +13,8 @@ spec:
     metadata:
       labels:
         app: picalc
-        foo: TEST-KW20
-        vers: "2"
+        foo: TEST-KW21
+        vers: "3"
     spec:
       containers:
       - name: picalc
