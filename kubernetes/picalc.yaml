@@ -13,9 +13,9 @@ spec:
     metadata:
       labels:
         app: picalc
-        foo: TEST-KW26
-        vers: "2"
-        bla: blubb
+        foo: TEST-KW39
+        vers: "3"
+        bla: bla-blubb
     spec:
       containers:
       - name: picalc
