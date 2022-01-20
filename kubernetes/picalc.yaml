@@ -13,9 +13,9 @@ spec:
     metadata:
       labels:
         app: picalc
-        foo: TEST-KW03-MSU
-        vers: "7"
-        bla: 1234567
+        foo: "TEST-KW03-MSU"
+        bla: "1234567"
+        test: neu 
     spec:
       containers:
       - name: picalc
