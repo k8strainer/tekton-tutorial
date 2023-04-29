@@ -5,7 +5,7 @@ metadata:
   labels:
     app: picalc
 spec:
-  replicas: 7
+  replicas: 3
   selector:
     matchLabels:
       app: picalc
