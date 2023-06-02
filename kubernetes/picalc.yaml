@@ -13,9 +13,9 @@ spec:
     metadata:
       labels:
         app: picalc
-        foo: "TEST-KW18"
+        foo: "TEST-KW22"
         bla: "abcdef"
-        test: "222"
+        test: "34534534534"
     spec:
       containers:
       - name: picalc
