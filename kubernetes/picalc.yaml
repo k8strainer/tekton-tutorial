@@ -14,7 +14,7 @@ spec:
       labels:
         app: picalc
         foo: "TEST-KW46"
-        bla: "it motive"
+        bla: "it-motive"
         test: "123456"
     spec:
       containers:
