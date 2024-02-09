@@ -13,9 +13,9 @@ spec:
     metadata:
       labels:
         app: picalc
-        foo: "TEST-KW03-24"
-        bla: "abc"
-        test: "ABC"
+        foo: "TEST-KW06-24"
+        bla: "elmos"
+        test: "ELMOS"
     spec:
       containers:
       - name: picalc
