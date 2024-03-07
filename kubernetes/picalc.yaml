@@ -5,7 +5,7 @@ metadata:
   labels:
     app: picalc
 spec:
-  replicas: 3
+  replicas: 6
   selector:
     matchLabels:
       app: picalc
@@ -13,9 +13,9 @@ spec:
     metadata:
       labels:
         app: picalc
-        foo: "TEST-KW06-24"
-        bla: "elmos"
-        test: "ELMOS"
+        foo: "TEST-KW10-24"
+        bla: "Rheinwerk"
+        test: "YXYZT"
     spec:
       containers:
       - name: picalc
