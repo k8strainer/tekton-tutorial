@@ -5,8 +5,7 @@
 FROM docker.io/library/golang:1.20 as builder
 
 # Copy local code to the container image.
-#WORKDIR /go/src/github.com/IBM/tekton-tutorial
-WORKDIR /go/src/github.com/k8strainer/tekton-tutorial
+WORKDIR /go/src/github.com/IBM/tekton-tutorial
 COPY picalc.go picalc_test.go .
 
 # Run unit tests
@@ -20,8 +19,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -v -o picalc
 FROM alpine
 
 # Copy the binary to the production image from the builder stage.
-#COPY --from=builder /go/src/github.com/IBM/tekton-tutorial/picalc /picalc
-COPY --from=builder /go/src/github.com/k8strainer/tekton-tutorial/picalc /picalc
+COPY --from=builder /go/src/github.com/IBM/tekton-tutorial/picalc /picalc
 
 # Service must listen to $PORT environment variable.
 # This default value facilitates local development.
