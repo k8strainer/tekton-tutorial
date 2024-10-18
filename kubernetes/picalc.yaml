@@ -29,9 +29,8 @@ spec:
         - name: http-server
           containerPort: 8080
         readinessProbe:
-          httpGet:
-            path: /
-            port: 8080
+          exec:
+            command: ["/bin/sh","-c","cat /proc/1/status"]
           initialDelaySeconds: 10
           
 ---
