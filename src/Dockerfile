@@ -1,13 +1,13 @@
 # Use the official Golang image to create a build artifact.
 # This is based on Debian and sets the GOPATH to /go.
 # https://hub.docker.com/_/golang
-# FROM docker.io/library/golang:1.12 as builder
-FROM docker.io/library/golang:1.20 as builder
+FROM docker.io/library/golang:1.12 as builder
+#FROM docker.io/library/golang:1.20 as builder
 
 # Copy local code to the container image.
 WORKDIR /go/src/github.com/k8strainer/tekton-tutorial
 COPY picalc.go picalc_test.go .
-RUN go mod init
+#RUN go mod init
 
 # Run unit tests
 RUN CGO_ENABLED=0 GOOS=linux go test
