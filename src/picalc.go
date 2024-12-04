@@ -1,4 +1,4 @@
-// Modified 04-12-2024 O.Liebel - test04 - commit-message
+// Modified 04-12-2024 O.Liebel - test04 - commit-message-on-failure
 package main
 
 import (
