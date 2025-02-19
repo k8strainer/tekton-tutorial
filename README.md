@@ -1,7 +1,7 @@
 ## Kubernetes Deployment using Tekton Pipelines
 
 Tekton is an open source project to configure and run CI/CD pipelines within a Kubernetes cluster.
-
+(Update test 02-25)
 
 ## Introduction
 
@@ -107,7 +107,7 @@ spec:
     description: git url to clone
     type: string
   - name: revision
-    description: git revision to checkout (branch, tag, sha, ref…)
+    description: git revision to checkout (branch, tag, sha, refâ€¦)
     type: string
     default: master
   - name: submodules
