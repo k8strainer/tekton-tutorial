@@ -1,0 +1,20 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: picalc-route
+  labels:
+    app: picalc
+    app.kubernetes.io/instance: picalc
+spec:
+  host: will.be.replaced
+  port:
+    targetPort: 8080
+  to:
+    kind: Service
+    name: picalc
+    weight: 100
+  wildcardPolicy: None
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+
