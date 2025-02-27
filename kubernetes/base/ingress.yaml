@@ -1,0 +1,19 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: picalc-ingress
+  namespace: picalc
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: REPLACE_ME
+    http:
+      paths:
+      - pathType: ImplementationSpecific
+        path: /
+        backend:
+          service:
+            name: picalc
+            port:
+              number: 8080
+
