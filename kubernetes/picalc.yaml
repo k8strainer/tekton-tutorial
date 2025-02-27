@@ -17,7 +17,7 @@ spec:
       containers:
       - name: picalc
         ## image: __IMAGE__@__DIGEST__
-        image: __IMAGE__
+        image: gcr.io/cluster-01-271319/picalc:1.0
         resources:
           requests:
             cpu: 100m
