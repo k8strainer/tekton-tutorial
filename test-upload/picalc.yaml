@@ -18,7 +18,7 @@ spec:
       containers:
         - name: picalc
           ## image: gcr.io/cluster-01-271319/picalc:1.0@__DIGEST__
-          image: gcr.io/cluster-01-271319/picalc@sha256:39444ec2befe0c161ec9b8aaa509e0f21e25289c823761b8d99d1045a2bb196c
+          image: gcr.io/cluster-01-271319/picalc@sha256:8d40562d03eb1d6c9cfffd2d23074c215ff593d4babfbb7284343ce6046cda8c
           resources:
             requests:
               cpu: 100m
@@ -51,7 +51,7 @@ spec:
   template:
     spec:
       containers:
-        - image: gcr.io/cluster-01-271319/picalc@sha256:39444ec2befe0c161ec9b8aaa509e0f21e25289c823761b8d99d1045a2bb196c
+        - image: gcr.io/cluster-01-271319/picalc@sha256:8d40562d03eb1d6c9cfffd2d23074c215ff593d4babfbb7284343ce6046cda8c
 #apiVersion: route.openshift.io/v1
 #kind: Route
 #metadata:
@@ -73,7 +73,7 @@ spec:
   template:
     spec:
       containers:
-        - image: gcr.io/cluster-01-271319/picalc@sha256:39444ec2befe0c161ec9b8aaa509e0f21e25289c823761b8d99d1045a2bb196c
+        - image: gcr.io/cluster-01-271319/picalc@sha256:8d40562d03eb1d6c9cfffd2d23074c215ff593d4babfbb7284343ce6046cda8c
 metadata:
   labels:
     test-upload: "true"
