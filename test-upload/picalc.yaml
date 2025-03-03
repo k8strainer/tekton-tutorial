@@ -1,0 +1,8 @@
+spec:
+  template:
+    spec:
+      containers:
+        - image: gcr.io/cluster-01-271319/picalc@sha256:39c35a764cad8455d1acd067a59cca6757e0d955394300565d48b13c7ae2fa52
+metadata:
+  labels:
+    test-upload: "true"
