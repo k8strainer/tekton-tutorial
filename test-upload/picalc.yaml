@@ -17,10 +17,11 @@ spec:
         bla: "test99"
         test: "s3679"
         test-upload: "true"
+        date: 2025-03-03_17-13-51
     spec:
       containers:
         - name: picalc
-          image: gcr.io/cluster-01-271319/picalc@sha256:a7910d2f98126b8e605accc5e9eae52d575343abc5afdc9296d21ef8f9d1bd7a
+          image: gcr.io/cluster-01-271319/picalc@sha256:782da8ee665f4bb19b640466e83db97450bab0db6dd65672c491d368aa728dfd
           ports:
             - name: http-server
               containerPort: 8080
