@@ -21,7 +21,7 @@ spec:
     spec:
       containers:
         - name: picalc
-          image: gcr.io/cluster-01-271319/picalc:1.0
+          image: gcr.io/cluster-01-271319/picalc@sha256:bb1cb83b4a2cd0913465fbfd0d3d402bb683686f199e1642be76902091b05df8
           ports:
             - name: http-server
               containerPort: 8080
