@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
         - name: picalc
-          image: gcr.io/cluster-01-271319/picalc@sha256:38541755c6c4ea387874f1316a72e201774373a319a90688e24c6a8018894371
+          image: gcr.io/cluster-01-271319/picalc@sha256:4710280146c553efb92066e5c559f16b1470e4ceaf5b92d39c71fae16a4051b3
           resources:
             requests:
               cpu: 100m
