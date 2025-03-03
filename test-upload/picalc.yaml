@@ -1,0 +1,55 @@
+# needed for push operation (with new digest) to test-upload
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: picalc
+  labels:
+    app: picalc
+    test-upload: "true"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: picalc
+  template:
+    metadata:
+      labels:
+        app: picalc
+        test-upload: "true"
+    spec:
+      containers:
+        - name: picalc
+          image: gcr.io/cluster-01-271319/picalc@sha256:ebf819b3677f8db73ea792099843ab279575b1f8461de815979e5d2673fe4531
+          resources:
+            requests:
+              cpu: 100m
+              memory: 50M
+            limits:
+              cpu: 200m
+              memory: 80M
+          ports:
+            - name: http-server
+              containerPort: 8080
+          readinessProbe:
+            exec:
+              command: ["/bin/sh", "-c", "cat /proc/1/status"]
+            initialDelaySeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: picalc
+  labels:
+    app: picalc
+    test-upload: "true"
+spec:
+  ports:
+    - port: 8080
+      targetPort: http-server
+  selector:
+    app: picalc
+  type: LoadBalancer
+  template:
+    metadata:
+      labels:
+        test-upload: "true"
