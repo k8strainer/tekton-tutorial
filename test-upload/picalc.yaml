@@ -4,6 +4,7 @@ metadata:
   name: picalc
   labels:
     app: picalc
+    test-upload: "true"
 spec:
   replicas: 6
   selector:
@@ -16,10 +17,11 @@ spec:
         foo: "Test"
         bla: "test99"
         test: "s3679"
+        test-upload: "true"
     spec:
       containers:
         - name: picalc
-          image: gcr.io/cluster-01-271319/picalc@sha256:aab51616418a18bb7b8e7cbadec4af00b097798acd2ea8072d4f129527553b6e
+          image: gcr.io/cluster-01-271319/picalc@sha256:4a4725ed90ce250b49d99f5e374c9fea942ccbb5dc1c35daf42b2cfb055629b5
           ports:
             - name: http-server
               containerPort: 8080
@@ -34,38 +36,3 @@ spec:
             exec:
               command: ["/bin/sh", "-c", "cat /proc/1/status"]
             initialDelaySeconds: 10
-0:
-  metadata:
-    labels:
-      test-upload: "true"
-  spec:
-    template:
-      metadata:
-        labels:
-          test-upload: "true"
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: picalc
-  labels:
-    app: picalc
-    foo: bar
-spec:
-  #  externalIPs:
-  #  - 192.168.99.77
-  ports:
-    - port: 8080
-      targetPort: http-server
-  selector:
-    app: picalc
-  type: LoadBalancer
-0:
-  metadata:
-    labels:
-      test-upload: "true"
-  spec:
-    template:
-      metadata:
-        labels:
-          test-upload: "true"
