@@ -1,3 +1,4 @@
+# needed for push operation (with new digest) to test-upload
 apiVersion: apps/v1
 kind: Deployment
 metadata:
