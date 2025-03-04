@@ -5,7 +5,7 @@ metadata:
   labels:
     app: picalc
 spec:
-  replicas: 3
+  replicas: 4
   selector:
     matchLabels:
       app: picalc
@@ -15,11 +15,11 @@ spec:
         app: picalc
         test: "s3679"
         test-upload: "true"
-        date: 2025-03-04_13-37-52
+        date: 2025-03-04_14-30-27
     spec:
       containers:
         - name: picalc
-          image: gcr.io/cluster-01-271319/picalc@sha256:e66a91e3e6d878e6e51f23ef68e4f1f9b3b80d3de1ac135d8a0f6b1793a26434
+          image: gcr.io/cluster-01-271319/picalc@sha256:7a47c7ff10ceba8376ce8d34599886b37da0cec4f73a9bc75e80ac5330f3621f
           ports:
             - name: http-server
               containerPort: 8080
