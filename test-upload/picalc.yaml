@@ -14,12 +14,11 @@ spec:
       labels:
         app: picalc
         test-upload: "true"
-        date: 2025-03-04_15-15-03
+        date: 2025-03-04_15-17-49
     spec:
       containers:
         - name: picalc
-          ## image: gcr.io/cluster-01-271319/picalc@sha256:598f091949628dcfbdcbc2d0f5ac331eefabc71d3f068e16f997c6d0dd43cecb@__DIGEST__
-          image: gcr.io/cluster-01-271319/picalc@sha256:598f091949628dcfbdcbc2d0f5ac331eefabc71d3f068e16f997c6d0dd43cecb
+          image: gcr.io/cluster-01-271319/picalc@sha256:35aeedd9d60322451a9b838fc31977aff2230071067968ff37314b82ba41a63c
           resources:
             requests:
               cpu: 100m
@@ -48,21 +47,5 @@ spec:
   selector:
     app: picalc
   type: LoadBalancer
-#apiVersion: route.openshift.io/v1
-#kind: Route
-#metadata:
-#  name: picalc
-#  labels:
-#    app: picalc
-#    app.kubernetes.io/instance: picalc
-#spec:
-#  host: picalc-tekton-pipelines.apps.opns1.local1.site
-#  port:
-#    targetPort: http-server
-#  to:
-#    kind: Service
-#    name: picalc
-#    weight: 100
-#  wildcardPolicy: None
 ---
 
