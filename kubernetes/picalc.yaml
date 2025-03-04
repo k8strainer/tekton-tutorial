@@ -16,7 +16,6 @@ spec:
     spec:
       containers:
       - name: picalc
-        ## image: __IMAGE__@__DIGEST__
         image: __IMAGE__
         resources:
           requests:
@@ -48,20 +47,3 @@ spec:
     app: picalc
   type: LoadBalancer
 ---
-#apiVersion: route.openshift.io/v1
-#kind: Route
-#metadata:
-#  name: picalc
-#  labels:
-#    app: picalc
-#    app.kubernetes.io/instance: picalc
-#spec:
-#  host: picalc-tekton-pipelines.apps.opns1.local1.site
-#  port:
-#    targetPort: http-server
-#  to:
-#    kind: Service
-#    name: picalc
-#    weight: 100
-#  wildcardPolicy: None
-
