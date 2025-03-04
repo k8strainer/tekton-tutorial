@@ -5,7 +5,7 @@ metadata:
   labels:
     app: picalc
 spec:
-  replicas: 4
+  replicas: 3
   selector:
     matchLabels:
       app: picalc
@@ -13,16 +13,13 @@ spec:
     metadata:
       labels:
         app: picalc
-        test: "s3679"
         test-upload: "true"
-        date: 2025-03-04_14-30-27
+        date: 2025-03-04_15-15-03
     spec:
       containers:
         - name: picalc
-          image: gcr.io/cluster-01-271319/picalc@sha256:7a47c7ff10ceba8376ce8d34599886b37da0cec4f73a9bc75e80ac5330f3621f
-          ports:
-            - name: http-server
-              containerPort: 8080
+          ## image: gcr.io/cluster-01-271319/picalc@sha256:598f091949628dcfbdcbc2d0f5ac331eefabc71d3f068e16f997c6d0dd43cecb@__DIGEST__
+          image: gcr.io/cluster-01-271319/picalc@sha256:598f091949628dcfbdcbc2d0f5ac331eefabc71d3f068e16f997c6d0dd43cecb
           resources:
             requests:
               cpu: 100m
@@ -30,6 +27,9 @@ spec:
             limits:
               cpu: 200m
               memory: 80M
+          ports:
+            - name: http-server
+              containerPort: 8080
           readinessProbe:
             exec:
               command: ["/bin/sh", "-c", "cat /proc/1/status"]
@@ -41,13 +41,28 @@ metadata:
   name: picalc
   labels:
     app: picalc
-    foo: bar
 spec:
-  #  externalIPs:
-  #  - 192.168.99.77
   ports:
     - port: 8080
       targetPort: http-server
   selector:
     app: picalc
   type: LoadBalancer
+#apiVersion: route.openshift.io/v1
+#kind: Route
+#metadata:
+#  name: picalc
+#  labels:
+#    app: picalc
+#    app.kubernetes.io/instance: picalc
+#spec:
+#  host: picalc-tekton-pipelines.apps.opns1.local1.site
+#  port:
+#    targetPort: http-server
+#  to:
+#    kind: Service
+#    name: picalc
+#    weight: 100
+#  wildcardPolicy: None
+---
+
