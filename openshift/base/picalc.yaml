@@ -13,8 +13,6 @@ spec:
     metadata:
       labels:
         app: picalc
-        foo: "Test"
-        bla: "test99"
         test: "s3679"
     spec:
       containers:
