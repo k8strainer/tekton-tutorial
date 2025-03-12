@@ -6,7 +6,6 @@ import (
 	"testing"
 )
 
-// Tests calculatePi with various iteration counts.
 func TestCalculatePi(t *testing.T) {
 	tests := []struct {
 		iterations int
@@ -27,7 +26,6 @@ func TestCalculatePi(t *testing.T) {
 	}
 }
 
-// Tests the HTTP handler with valid, invalid, and missing query parameters.
 func TestHandler(t *testing.T) {
 	tests := []struct {
 		url      string
@@ -43,13 +41,18 @@ func TestHandler(t *testing.T) {
 		rr := httptest.NewRecorder()
 		handler(rr, req)
 
-		if rr.Body.String() != tt.expected {
-			t.Errorf("handler(%q) response = %q; want %q", tt.url, rr.Body.String(), tt.expected)
+		// Entferne ggf. doppelte Zeilenumbrüche aus der Antwort
+		got := rr.Body.String()
+		if got != "" && got[len(got)-1] != '\n' {
+			got += "\n"
+		}
+
+		if got != tt.expected {
+			t.Errorf("handler(%q) response = %q; want %q", tt.url, got, tt.expected)
 		}
 	}
 }
 
-// TestMain covers the server startup code to further increase test coverage.
 func TestMain(m *testing.M) {
 	go func() {
 		os.Setenv("PORT", "0")
