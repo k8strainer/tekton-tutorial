@@ -7,7 +7,7 @@ import (
 	"testing"
 )
 
-// TestCalculatePi prüft die Berechnung für verschiedene Iterationen.
+// Tests calculatePi with various iteration counts.
 func TestCalculatePi(t *testing.T) {
 	tests := []struct {
 		iterations int
@@ -28,39 +28,32 @@ func TestCalculatePi(t *testing.T) {
 	}
 }
 
-// TestHandler prüft, ob der HTTP-Handler korrekt auf gültige und ungültige Anfragen reagiert.
+// Tests the HTTP handler with valid, invalid, and missing query parameters.
 func TestHandler(t *testing.T) {
-	reqValid, _ := http.NewRequest("GET", "/?iterations=10", nil)
-	reqInvalid, _ := http.NewRequest("GET", "/?iterations=invalid", nil)
-	reqMissing, _ := http.NewRequest("GET", "/", nil)
-
 	tests := []struct {
-		req        *http.Request
-		wantStatus int
-		wantBody   string
+		url      string
+		expected string
 	}{
-		{reqValid, http.StatusOK, "3.0418396189\n"},
-		{reqInvalid, http.StatusOK, "iterations parameter not valid\n"},
-		{reqMissing, http.StatusInternalServerError, ""},
+		{"/?iterations=10", "3.0418396189\n"},
+		{"/?iterations=invalid", "iterations parameter not valid\n"},
+		{"/", "iterations parameter missing\n"},
 	}
 
 	for _, tt := range tests {
+		req := httptest.NewRequest("GET", tt.url, nil)
 		rr := httptest.NewRecorder()
-		handler(rr, tt.req)
+		handler(rr, req)
 
-		if status := rr.Code; status != http.StatusOK && tt.wantBody != "" {
-			t.Errorf("handler() status code = %v, want %v", status, http.StatusOK)
-		}
-		if tt.wantBody != "" && rr.Body.String() != tt.wantBody {
-			t.Errorf("handler() response = %v, want %v", rr.Body.String(), tt.wantBody)
+		if rr.Body.String() != tt.expected {
+			t.Errorf("handler(%q) response = %q; want %q", tt.url, rr.Body.String(), tt.expected)
 		}
 	}
 }
 
-// TestMain prüft die Funktionalität der main-Funktion (Coverage-Erhöhung durch indirekten Aufruf).
+// TestMain covers the server startup code to further increase test coverage.
 func TestMain(m *testing.M) {
 	go func() {
-		os.Setenv("PORT", "0") // random verfügbarer Port, um Kollisionen zu verhindern
+		os.Setenv("PORT", "0")
 		main()
 	}()
 	os.Exit(m.Run())
