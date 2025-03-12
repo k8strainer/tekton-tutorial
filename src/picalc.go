@@ -27,13 +27,13 @@ func handler(w http.ResponseWriter, r *http.Request) {
 	queryIterations, ok := r.URL.Query()["iterations"]
 
 	if !ok || len(queryIterations) < 1 {
-		http.Error(w, "iterations parameter missing\n", http.StatusBadRequest)
+		http.Error(w, "iterations parameter missing", http.StatusBadRequest)
 		return
 	}
 
 	iterations, err := strconv.Atoi(queryIterations[0])
 	if err != nil {
-		http.Error(w, "iterations parameter not valid\n", http.StatusBadRequest)
+		http.Error(w, "iterations parameter not valid", http.StatusBadRequest)
 		return
 	}
 
