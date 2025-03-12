@@ -23,14 +23,23 @@ func calculatePi(iterations int) float64 {
 }
 
 func handler(w http.ResponseWriter, r *http.Request) {
-    log.Print("Pi calculator received a request.")
-    iterations, err := strconv.Atoi(r.URL.Query()["iterations"][0])
-    if err != nil {
-        fmt.Fprintf(w, "iterations parameter not valid\n")
-        return
-    }
-    fmt.Fprintf(w, "%.10f\n", calculatePi(iterations))
+	log.Print("Pi calculator received a request.")
+	queryIterations, ok := r.URL.Query()["iterations"]
+
+	if !ok || len(queryIterations) < 1 {
+		http.Error(w, "iterations parameter missing\n", http.StatusBadRequest)
+		return
+	}
+
+	iterations, err := strconv.Atoi(queryIterations[0])
+	if err != nil {
+		http.Error(w, "iterations parameter not valid\n", http.StatusBadRequest)
+		return
+	}
+
+	fmt.Fprintf(w, "%.10f\n", calculatePi(iterations))
 }
+
 
 func main() {
     log.Print("Pi calculator started.")
