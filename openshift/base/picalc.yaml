@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: picalc
+  name: picalc1
   labels:
     app: picalc
 spec:
