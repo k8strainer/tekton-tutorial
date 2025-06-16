@@ -51,7 +51,7 @@ spec:
     targetPort: http-server
   selector:
     app: picalc
-  type: LoadBalancer
+ # type: LoadBalancer
 ---
 #apiVersion: route.openshift.io/v1
 #kind: Route
