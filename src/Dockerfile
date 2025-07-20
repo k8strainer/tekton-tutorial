@@ -25,7 +25,7 @@ RUN CGO_ENABLED=0 GOOS=linux go build -v -o picalc
 # Use a Docker multi-stage build to create a lean production image.
 # https://docs.docker.com/develop/develop-images/multistage-build/#use-multi-stage-builds
 #FROM docker.io/library/alpine:latest
-FROM registry.access.redhat.com/ubi8
+FROM registry.access.redhat.com/ubi9
 
 # Copy the binary to the production image from the builder stage.
 COPY --from=builder /go/src/github.com/k8strainer/tekton-tutorial/picalc /picalc
