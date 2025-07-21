@@ -14,11 +14,11 @@ spec:
       labels:
         app: picalc
         test-upload: "true"
-        date: 2025-07-21_15-21-36
+        date: 2025-07-21_15-28-14
     spec:
       containers:
         - name: picalc
-          image: gcr.io/cluster-01-271319/picalc@sha256:754d6791182f9d8f1797eafcba284b4b4ef7227fe3a5be6dc6faad95a787ea46
+          image: gcr.io/cluster-01-271319/picalc@sha256:dfaf6b1f39a2f9798dba03e8f2c2f5b8a2991eb106666d231bf18d2491bebaf5
           resources:
             requests:
               cpu: 100m
