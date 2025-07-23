@@ -5,7 +5,8 @@
 #FROM docker.io/library/golang:1.14 as builder
 #FROM docker.io/library/golang:1.16 as builder
 #FROM docker.io/library/golang:1.18 as builder 
-FROM gcr.io/cluster-01-271319/golang:1.18 as builder 
+#FROM gcr.io/cluster-01-271319/golang:1.18 as builder 
+FROM mirror.gcr.io/library/golang:1.18 as builder 
 # 1.18 ok, 1.20 nicht 
 #FROM docker.io/library/golang:1.20 as builder
 
