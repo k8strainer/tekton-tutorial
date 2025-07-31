@@ -1,4 +1,5 @@
 // Modified 04-12-2024 O.Liebel - test04 - commit-message-on-failure
+// gitleaks test-pass-string: Password="123456dsfesgsdhgdfhhgd"
 package main
 
 import (
