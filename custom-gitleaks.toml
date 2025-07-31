@@ -1,0 +1,9 @@
+[[rules]]
+id          = "high-entropy-generic"
+description = "≥ 4‑byte high‑entropy string"
+regex       = '''[A-Za-z0-9/+]{24,}={0,2}'''
+entropy {
+  min = 3.5
+  max = 7.5
+}
+tags        = ["entropy","generic"]
