@@ -1,2 +1,5 @@
 Modify test.txt - test for CEL interceptor #3
 
+#gitleaks test
+password="12345678"
+
