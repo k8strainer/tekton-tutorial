@@ -1,3 +1,4 @@
 resources:
   - route.yaml
   - picalc.yaml
+  - namespace.yaml
