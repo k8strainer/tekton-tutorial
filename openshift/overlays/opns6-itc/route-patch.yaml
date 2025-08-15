@@ -1,0 +1,7 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: picalc-route
+spec:
+  host: "picalc.apps.opns6.opns.itconcepts.cloud"
+
