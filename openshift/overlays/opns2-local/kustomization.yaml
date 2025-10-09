@@ -1,6 +1,5 @@
-apiVersion: route.openshift.io/v1
-kind: Route
-metadata:
-  name: picalc-route
-spec:
-  host: "picalc.apps.opns2.local1.site"
+resources:
+  - ../../base
+
+patchesStrategicMerge:
+- route-patch.yaml
