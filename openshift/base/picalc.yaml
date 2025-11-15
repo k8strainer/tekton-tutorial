@@ -52,4 +52,4 @@ spec:
     targetPort: http-server
   selector:
     app: picalc
-  type: LoadBalancer
+ # type: LoadBalancer
