@@ -1,2 +1,1 @@
-Modify test.txt - test for CEL interceptor #3
-new test #3
+Modify test.txt - test for CEL interceptor #1
