@@ -5,7 +5,7 @@ metadata:
   labels:
     app: picalc
 spec:
-  replicas: 6
+  replicas: 2
   selector:
     matchLabels:
       app: picalc
@@ -14,8 +14,8 @@ spec:
       labels:
         app: picalc
         foo: "Test"
-        bla: "12345"
-        test: "xyz"
+        bla: "xztecf"
+        test: "11111"
     spec:
       containers:
       - name: picalc
