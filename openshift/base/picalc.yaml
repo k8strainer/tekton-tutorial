@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: picalc
-  namespace: picalc-1 
+  #namespace: picalc-1 
   ## for argo-notifications: wrong ns to provoke sync-failed   
   ## (you have to terminate the unsuccessful sync or wait until it's cancelled, before failure is reported) 
   labels:
